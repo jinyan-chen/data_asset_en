@@ -25,7 +25,7 @@ Each subscription topic has a unique ID. You can choose to define a subscription
 
 **Service Account (SA)**
 
-Each subscription topic must has an associated [Service Account](https://docs.eniot.io/docs/app-development/en/latest/managing_apps.html#registering-an-application) (SA), which is used for consumer and data authentication.
+Each subscription topic must has an associated [Service Account](https://www.envisioniot.com/docs/app-development/en/latest/managing_apps.html#registering-an-application) (SA), which is used for consumer and data authentication.
 
 **Customers**
 

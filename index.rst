@@ -5,6 +5,13 @@
    :maxdepth: 2
    :caption: Overview
 
+   data_asset_overview
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Learn
+
+   data_asset_concepts
    data_subscription_overview
 
 .. toctree::
@@ -26,16 +33,10 @@
 
    data_subscription_sdk
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Related Topics
-
-   Streaming Analytics <https://docs.eniot.io/docs/online-data/en/latest/streaming_overview.html>
-   Device Connection <https://docs.eniot.io/docs/device-connection/en/latest/deviceconnection_overview.html>
 
 Downloads
 """"""""
     pdf_ htmlzip_ epub_
-.. _pdf: https://docs.eniot.io/projects/online-data/downloads/pdf/latest/
-.. _htmlzip: https://docs.eniot.io/projects/online-data/downloads/htmlzip/latest/
-.. _epub: https://docs.eniot.io/projects/online-data/downloads/epub/latest/
+.. _pdf: https://www.envisioniot.com/projects/online-data/downloads/pdf/latest/
+.. _htmlzip: https://www.envisioniot.com/projects/online-data/downloads/htmlzip/latest/
+.. _epub: https://www.envisioniot.com/projects/online-data/downloads/epub/latest/

@@ -1,18 +1,18 @@
-# 存储策略概览
+# Storage Policy Overview
 
-存储策略服务是EnOS开放平台为客户提供多样化存储选择，客户可根据自身数据存储及读取需求，对数据进行分类存储进而降低存储成本、提升数据读取效率。
+With the Storage Policy service, EnOS provides a variety of data storage options for users based on their data storage and reading requirements. Data is stored by categories (data type and storage time), thus reducing data storage costs and enhancing data reading efficiency.
 
-## 产品功能
-- **历史数据TSDB分类存储**：支持用户将关键及需要频繁访问的数据进行TSDB分类存储，不同分类的数据存储时长可自行配置。针对不同分类的存储，TSDB提供了对应能力的Open API满足用户的不同读取需求。
-- **历史数据归档存储**：支持用户对重要且不可恢复的、占用存储空间很大的数据进行归档存储。
-- **存储Open API**：针对不同的存储，存储策略服务提供对应的Open API帮助用户获取数据。这些API除了提供简单的数据读取功能外，还提供不同的函数支持用户在读取数据的同时做运算，大大减轻了用户处理数据的负担。
+## Features
+- **TSDB**: EnOS Time Series Database supports storing important and frequently-accessed data by data types. Asset AI type data, normalized AI type data, DI type data, PI type data, and generic data can be stored separately, and the data storage time can be customized (1 month, 3 months, or 1 year). The data stored in each database can be retrieved by a specific Open API.
+- **Archive DB**: The Archive database supports storing historical asset data with huge size for a longer time. Data stored in the archive DB can be used for further analysis and generating reports.
+- **Open API**: Open APIs are provided for retrieving data stored with different storage policies. When reading data, the APIs can also run specific functions to process the retrieved data, thus improving the data processing efficiency.
 
-## 产品优势
-- 个性化存储时长配置
-- 个性化数据分类配置
-- 功能强大的数据读取Open API
+## Advantages
+- Customized data storage time
+- Separate storage by data types
+- Open APIs for reading stored data
 
-## 使用限制
+## Usage Limit
 - xx
 - xx
 - xx
