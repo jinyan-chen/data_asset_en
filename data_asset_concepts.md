@@ -4,7 +4,7 @@ This topic introduces the major concepts involved in data asset management.
 
 ## About Stream Data Analytics
 
-The major concepts include stream data, stream analytics, data type, and data processing strategy. For details about these concepts, see [Stream Data Analytics Concepts](https://www.envisioniot.com/docs/online-data/en/latest/streaming_concept.html).
+The major concepts include stream data, stream analytics, data type, and data processing strategy. For details about these concepts, see [Stream Data Analytics Concepts](https://www.envisioniot.com/docs/online-data/en/latest/streaming_concepts.html).
 
 ## About Data Subscription
 

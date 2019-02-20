@@ -44,7 +44,7 @@ EnOS provides a variety of data storage options for you based on your data stora
 
 ### Device Management Service
 
-EnOS Device Management helps you quickly and securely connect physical devices to EnOS Cloud and start to transfer data, manage device lifecycle, and map the physical asset structure to the digital world. [Learn more >>](https://www.envisioniot.com/docs/device-connection/en/latest/device_management_overview.html).
+EnOS Device Management helps you quickly and securely connect physical devices to EnOS Cloud and start to transfer data, manage device lifecycle, and map the physical asset structure to the digital world. [Learn more >>](https://www.envisioniot.com/docs/device-connection/en/latest/device_management_overview.html)
 
 ### Stream Analytics Service
 

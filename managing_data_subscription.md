@@ -12,18 +12,18 @@ Log in EnOS Console and select the **Data Subscription** module. On the **Data S
 
 
 ## Configuring Subscription Topic
-**Subscription Type**
+**Type**
 
 EnOS enables developers to subscribe to different data sources. The subscription configuration for data sources is different. EnOS data subscription service supports the following data sources:
 
 - **Real-time data**: Real-time telemetry of asset measure points uploaded to the cloud with timestamp.
 - **Alert data**: Alert data are generated according to specific alert rules defined for real-time data.
 
-**Subscription ID**
+**ID**
 
 Each subscription topic has a unique ID. You can choose to define a subscription ID or use the system-generated one. Subscription ID can be composed of upper-case or lower-case letters, underscore, or dash.
 
-**Service Account (SA)**
+**SA (Service Account)**
 
 Each subscription topic must has an associated [Service Account](https://www.envisioniot.com/docs/app-development/en/latest/managing_apps.html#registering-an-application) (SA), which is used for consumer and data authentication.
 
@@ -31,7 +31,7 @@ Each subscription topic must has an associated [Service Account](https://www.env
 
 Based on the data access permission of the selected SA (associated with purchased application), you can choose the customers whose data are to be subscribed to.
 
-**Subscription Filters**
+**Model Filter**
 
 1. Filtering conditions for real-time data:
    - Filtering data by model and measure points (subscribing to data of specific measure points)
