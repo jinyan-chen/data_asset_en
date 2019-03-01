@@ -1,38 +1,43 @@
-# TSDB存储策略配置
-EnOS平台提供自研数据库TSDB供用户快速存储和读取重要且访问频次较高的业务数据。针对不同类型的业务数据，TSDB也提供多种存储类型供用户进行选择，每种存储类型提供的存储和读取能力有所不同，用户可根据业务需求进行选择，目前TSDB提供的的存储类型如下：
-- AI原始秒级数据
-- AI分钟级规整数据
-- DI数据
-- PI数据
-- 其他数据
+# Configuring TSDB Storage
+EnOS Time Series Database (TSDB) enables you to store and retrieve important and frequently-accessed business data. TSDB provides specific storage types for different types of business data. Each storage type has specific data storing and reading capability. You can define customized data storage policies based on your business needs. Currently, EnOS TSDB provides the following storage types:
+- AI Raw Data
+- AI Normalized Data
+- DI Data
+- Generic Data
 
-## AI原始秒级数据
-AI（Analogy Input）即模拟量输入，模拟量输入的物理量有温度、压力、流量等，这些物理量由相应的传感器感应测得，往往经过变送器转变为电信号送入控制器的模拟输入口，为反应真实的数据变化，这类数据一般采集频率高，通常是秒级采集，因此数据量巨大。在真实使用过程中，一般会对这些秒级数据进行分钟级规整处理后使用，所以这类原始秒级数据一般不需要存储过长时间。TSDB存储策略支持这类原始秒级AI数据的存储，存储限制如下：
-- **存储限制**：测点类型必须是AI类型
-- **读取能力**：目前只支持用户根据时间区间进行数据查询，对应的读取Open API是 [getAssetsAIRawData](/xx)。
+## AI Raw Data
+AI (analogy input) data consists of physical parameters like temperature, pressure, flow, etc. The values of these parameters are collected by various sensors, converted to electric signals by a transmitter, and transferred to the analogy input of the controller. To reflect real-time data changes, AI data generally has high ingestion frequency, usually by seconds, and thus having huge data size. In most business cases, the second-level raw data is usually normalized by minute-level processing, so this kind of second-level raw data does not need to be stored for a long time. EnOS TSDB storage supports storing second-level AI raw data, with the following requirements:
+- **Storage limit**: Measure point data type must be AI type.
+- **Retrieving data**: Supporting retrieving stored data by time range, with the `getAssetsAIRawData` API.
 
-## AI分钟级规整数据
-上述提到的在真实使用过程中，一般会对AI秒级数据进行分钟级聚合处理后使用，TSDB支持将这些分钟级规整处理后的数据进行另外处理，且提供自动规整处理，在读取时，对这些数据量大大缩小的分钟级数据能提供聚合读取的能力。
-- **规整处理**：当选择对某AI量进行分钟级规整存储后，所有AI数据进入规整TSDB时，会自动去除掉数据时间戳的秒级后缀，因此某一分钟只会存最后一条入库的数据。
-- **聚合函数**：由于做了分钟级规整，数据量大大减少，分钟级规整tsdb可提供读取聚合函数供开发者在读取数据时进行各种聚合处理，对应的Open API是[getAssetsAINormalizedData](/xx)，时间窗口可通过接口参数interval来设定，目前支持的聚合函数有：
-   -  **max**: 比较同一个时间窗口内的所有有效记录的value，将最大值作为输出记录的value
-   -  **min**: 比较同一个时间窗口内的所有有效记录的value，将最小值作为输出记录的value
-   -  **avg**: 对同一个时间窗口内的所有有效记录的value求平均，将平均值作为输出记录的value
-   -  **sum**: 对同一个时间窗口内的所有有效记录的value求和，将求和结果作为输出记录的value
-   -  **cnt**: 对同一个时间窗口内的所有有效记录求计数，将计数结果作为输出记录的value
+## AI Normalized Data
+As described in the above section, the second-level raw data is usually normalized by minute-level processing in most business cases to reduce the data size. EnOS TSDB stores the normalized data separately and supports extra processing for the stored data. When you retrieve the minute-level normalized data with API, EnOS TSDB provides aggregation functions for further data processing.
+- **Normalization processing**: When you select the **AI Normalized Data** storage type, the second-level suffix of the data timestamp will be removed when the AI data is stored in TSDB. Therefore, only the last-coming data record of a minute will be stored.
+- **Aggregation functions**: The data size of minute-level normalized data is much smaller, so TSDB provides aggregation functions for developers to further process the stored data when retrieving data with the the `getAssetsAINormalizedData` API. Supported aggregation functions are as follows:
+   -  **max**: Compare all valid record values in the specified time window and output the maximum value.
+   -  **min**: Compare all valid record values in the specified time window and output the minimum value.
+   -  **avg**: Calculate and output the average value of all valid record values in the specified time window.
+   -  **sum**: Calculate and output the sum value of all valid record values in the specified time window.
+   -  **cnt**: Count all valid record values in the specified time window and output the total number.
 
-## DI数据
-DI（Digital Input）即开关量输入, 亦称数字量输入。例如：以开关状态为输出的传感器，如水流开关、风速开关、压差开关等，将高/低电平（相当于开关）两种状态输入到控制器，控制器将其转换为数字量1或0，进而对其进行逻辑分析和计算，这种控制器通道即为DI通道。DI量一般是可枚举的状态量，上送的频率不固定，一般只有变位了才会上送或存储，针对这类数据，TSDB提供对应的特殊存储及读取。
-- **存储限制**：只有测点类型是DI的数据才能配置DI数据存储
-- **变位读取**：DI数据TSDB存储支持用户变位读取DI，当用户输入一段时间查询DI量时，如果开始时间没有数据，则会找到开始时间之前的最后一条数据，并变位返回此输入时间段内的DI数据。读取Open API是[getAssetsStatusData](/xx)
+## DI Data
+DI (digital Input) data is usually used for recording device status. For example, a sensor outputs the device running status, such as water flow switch and wind speed switch. The switch status is transferred to the controller and then converted to digital value 1 or 0, which can be used for logic analysis and computation. DI data is usually enumerable status values, and the frequency of data upload is not fixed. Generally, data is upload or stored only when device status changes. For DI data, EnOS TSDB provides separated storage and reading policy, with the following requirements:
+- **Storage limit**: Measure point data type must be DI type.
+- **Retrieving status change data**: Supporting retrieving device status change data. When you query DI data in a specific time range, if no DI is found at the start time, the `getAssetsStatusData` API will search forward for the nearest record. The nearest record will be returned if it is found in the search.
+
+<!--
 
 ## PI数据
+
 PI（Pulse Input）即脉冲量输入, 一般用于电能计量。PI量一般分为两种，一种是功率；一种是电表读数；TSDB提供这两类PI量的存储并基于这两类PI量计算电价的读取方式，具体详情如下：
 - **存储限制**：只有测点类型是PI的数据+配置了PI流式计算任务的输出点才能进行PI数据存储。
-- **读取能力**：目前只支持用户输入时间区间对“PI”类型数据的读取，相关的Open API 是[getAssetsProductionData](/xx)
+- **读取能力**：目前只支持用户输入时间区间对“PI”类型数据的读取，对应的数据读取Open API 是[getAssetsProductionData](/xx)
 
-## 其它数据
-在配置模型点时，除了配置AI、DI、PI这三类数据点，还可以配置“其它”这个数据类型；TSDB对这个类型提供独立的存储，支持用户对这类数据配置对应的存储时长和存储点，详情如下：
-- **存储限制**：只有测点类型是other的数据才能进行"其它数据"存储;
-- **读取能力**：支持用户输入时间区间对“other”类型数据的读取，相关的Open API 是[getAssetsOtherData](/xx)
+-->
+
+## Generic Data
+
+When configuring device models, you can choose AI, DI, or Generic as the data type of a measure point. EnOS TSDB provides separate storage policy for generic data, with the following requirements:
+- **Storage limit**: Measure point data type must be generic type.
+- **Retrieving data**: Supporting retrieving stored data by time range, with the `getAssetsGenericData` API.
 

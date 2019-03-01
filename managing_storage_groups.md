@@ -1,15 +1,16 @@
-# 存储策略分组管理
-策略分组支持用户将不同项目或不同领域的存储需求进行不同的配置，比如风领域和光领域的数据存储可以分开配置。
-## 创建策略分组
-登录EnOS平台，进入**控制台** > **存储策略**模块可对存储策略进行浏览和操作。点击**新建分组**按钮，可进入创建策略分组配置页面进行分组配置：
-- **分组名称**：支持中英文、下划线、中横线
-- **关联模型**：每个策略分组都必须关联资产模型，这样分组下的策略才能对相关的模型点进行配置；各个分组之间模型不共享
+# Managing Storage Policy Groups
+Data storage policy groups support separate storage policy configuration of different projects or domains. Each EnOS Console account can create 2 storage policy groups.
+## Creating a Storage Policy Group
+Log in EnOS Console and select the **Storage Policy** module. Click **Create Group** or the **+** icon to create a storage policy group. Then, complete the basic configuration of the storage policy group.
+- **Group Name**: Enter a name for the storage policy group. Chinese characters, English letters, underscores, and hyphens are supported.
+- **Group Model**: Each storage policy group must associate with at least one asset model, so that storage policies can be configured for measure points of the model. Note that a model cannot be associated with 2 storage policy groups.
 
-## 修改策略分组
-创建了分组之后，可对分组信息进行修改，分组的关联模型修改目前有如下限制：
-- 已被配置了策略的模型不能取消关联
-- 已被其他模型关联的模型不能关联
+## Editing a Storage Policy Group
+After a storage policy group is created, you can edit the group information with the following limits:
+- Measure points that have been configured with storage policies cannot be removed. 
+- The storage policy group cannot be associated with a model that has been associated with other groups.
 
-## 删除策略分组
-当数据不再需要存储，用户可删除分组策略进行资源释放、减少成本，目前策略分组的删除限制如下：
-- 只有取消所有的模型关联，当前分组才能被删除
+## Deleting a Storage Policy Group
+When stored data is not needed, you can delete storage policy groups to release resources and reduce costs, with the following limit: 
+
+- A storage policy group can be deleted only if all associated models are removed. 

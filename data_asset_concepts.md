@@ -54,18 +54,22 @@ Data producer sends messages to the subscription service, but the consumer fails
 
 Subscriber can filter messages with specific conditions so as to receive filtered data only. Message filters can be configured in the subscription service.
 
-<!--
+
 
 ## About Storage Policy
 
 To help you understand data storage policy related concepts and customize data storage policies, definition and description of related terms are as follows.
 
-**Storage group**
+### Storage group
 
-A storage group is
+Data storage group supports separate storage policy configuration of different projects or domains.
 
-**Storage type**
+### Storage type
 
-A storage type is
+Separate storage by data type (AI raw data, AI normalized data, DI data, and generic data). An API is provided to retrieved each type of stored data. 
 
--->
+### Storage time
+
+Data retention time. Available options are 1 month, 3 months, 6 months, 1 year, 2 years, 3 years, 5 years, 10 years, 15 years, and 20 years.
+
+

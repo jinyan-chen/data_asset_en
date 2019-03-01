@@ -1,5 +1,5 @@
 # Managing Data Subscription
-EnOS System provides data subscription service to improve the API calling efficiency of applications with active push of subscribed data, which supports subscription to real-time asset data, asset alert data, and asset meta data. Benefiting from the data subscription service, applications do not need to call APIs repeatedly and frequently to get asset data. Instead, applications can call APIs only when there are pushed data, thus improving API calling efficiency and reducing costs. 
+EnOS System provides data subscription service to improve the API calling efficiency of applications with active push of subscribed data, which supports subscription to real-time asset data, asset alert data, and asset meta data. Benefiting from the data subscription service, applications do not need to call APIs repeatedly and frequently to get asset data. Instead, applications can call APIs only when there are pushed data, thus improving API calling efficiency and reducing costs.
 
 
 
@@ -12,6 +12,7 @@ Log in EnOS Console and select the **Data Subscription** module. On the **Data S
 
 
 ## Configuring Subscription Topic
+
 **Type**
 
 EnOS enables developers to subscribe to different data sources. The subscription configuration for data sources is different. EnOS data subscription service supports the following data sources:
