@@ -24,13 +24,15 @@ EnOS enables developers to subscribe to different data sources. The subscription
 
 Each subscription topic has a unique ID. You can choose to define a subscription ID or use the system-generated one. Subscription ID can be composed of upper-case or lower-case letters, underscore, or dash.
 
-**SA (Service Account)**
+**SA (service account)**
 
-Each subscription topic must has an associated [Service Account](https://www.envisioniot.com/docs/app-development/en/latest/managing_apps.html#registering-an-application) (SA), which is used for consumer and data authentication.
+Each subscription topic must has an associated [service account](https://www.envisioniot.com/docs/app-development/en/latest/managing_apps.html#registering-an-application) (SA), which is used for consumer and data authentication. The system will detect the validity of the service account dynamically. When a service account is deleted, the data subscription configuration will be automatically disabled. 
 
 **Customers**
 
-Based on the data access permission of the selected SA (associated with purchased application), you can choose the customers whose data are to be subscribed to.
+Based on the data access permission of the selected SA (associated with purchased application), you can choose the customers whose data are to be subscribed to. 
+
+.. note:: When a customer revokes the data access authorization of a service account, the related subscription to the customer’s data will be stopped automatically.
 
 **Model Filter**
 
@@ -40,6 +42,8 @@ Based on the data access permission of the selected SA (associated with purchase
 2. Filtering conditions for alert data:
    - Filtering data by models (subscribing to alert data of specific model)
    - Filtering data by device tags (subscribing to data of specific devices)
+
+.. note:: When a subscribed data source (model or measure point) is deleted, the system will keep the data subscription configuration, but an error message will be displayed, reporting that the configured data source is an unknown object.
 
 
 

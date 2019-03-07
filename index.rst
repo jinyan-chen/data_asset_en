@@ -37,7 +37,6 @@
 
    data_subscription_sdk
 
-
 Downloads
 """"""""
     pdf_ htmlzip_ epub_
