@@ -45,24 +45,22 @@ After the subscription topic is configured, click **Save** to save the configura
 
 ## Step 3. Get subscribed data with Java SDK
 EnOS provides Java SDK to help developers with offline application development and data consumption.
-- Download the Java SDK on [GitHub]() and install it in the IDE; or add [Maven dependency]() for the SDK. See the following example:
+- Add [Maven dependency](https://mvnrepository.com/artifact/com.envisioniot/enos-subscribe/2.0.0) for the SDK. See the following example:
 
-  
 ```
 <dependency>
   <groupId>com.envisioniot</groupId>
-  <artifactId>subscribe</artifactId>
+  <artifactId>enos-subscribe</artifactId>
   <version>2.0.0</version>
 </dependency>
 ```
 - Use IDE for offline application development. See the following code sample:
 
-  
 ```
 String sub_server_host ="sub_server_host";
-String sub_server_port ="sub_server_host";
-String accessKey ="sub_server_host";
-String accessSecret ="sub_server_host";
+String sub_server_port ="sub_server_port";
+String accessKey ="accessKey";
+String accessSecret ="accessSecret";
 /* service */
 EOSClient eosClient = new EOSClient(sub_server_host,sub_server_port, accessKey, accessSecret);
 IAlertService alertService = eosClient.getAlertService();
@@ -81,5 +79,9 @@ alertService.subscribe(alertHandler, subId);
 /* subscribe with consumer group */
 alertService.subscribe(alertHandler, subId, consumerGroup);
 ```
+For more information about the SDK, see [Data Subscription SDK Reference](data_subscription_sdk).
+
 ## Step 4. Check the data consumption results
+
 Run the application for data consumption and check the data consumption results in the logs of the application.
+

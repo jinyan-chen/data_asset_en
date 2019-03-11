@@ -1,12 +1,16 @@
 # About Data Asset Management
 
-EnOS™ Data Asset Management helps you properly manage the data that is ingested from the devices that are connected with EnOS Cloud. EnOS Data Asset Management enables you to process stream data, subscribe to real-time and alert data, customize data storage policies, and retrieve stored data with APIs.
+EnOS Data Asset Management offering targets to help you optimize your total cost of ownership for your data assets on EnOS. The service mainly brings the following benefits:
 
+- Strong data analytics capability
+- High data development efficiency and lower barrier of stream data processing development
+- Optimized cost of data storage due to more flexible configuration
+- Effective data retention and access based on domain expertise accumulation
 
 
 ## Targeted Personas
 
-EnOS Data Asset Management Service primarily serves the following roles:
+EnOS Data Asset Management offering primarily serves the following roles:
 
 **Data Developer**
 
@@ -20,18 +24,15 @@ Application developer, who develops applications to get the subscribed or stored
 
 ## Key Capabilities
 
-In general, EnOS Data Asset Management has the following capabilities:
+In general, EnOS Data Asset Management offering provides the following services:
 
 **Stream data analytics**
 
-The computation the engine processes is real-time and streaming, and the data streams are subscribed and consumed by stream computing in chronological order.
-
-Because the data is generated continuously, the data streams are integrated to the streaming system continuously. For example, website access log is a type of stream data, the log continuously records data as long as the website is online. Thus, the stream data is always real-time and unbounded.
+The essence of stream analytics service is to ensure low-latency of stream data transmission and processing, as well as high accuracy of analytics. To achieve these goals, EnOS Stream Analytics not only provides high throughput, low latency stream processing, but also accumulated the leading and most frequently used stream processing algorithms for certain industries. The service provides visualized template-based configuration to help you quickly perform your stream analytics tasks and task monitoring. [Learn more >>](https://www.envisioniot.com/docs/online-data/en/latest/streaming_overview.html)
 
 **Data subscription**
 
-With data subscription configuration enabled, you can subscribe to real-time asset data and asset alert data. Benefiting from the data subscription service, applications do not need to call APIs repeatedly and frequently to get asset data. Instead, applications call APIs only when there are pushed data, thus improving API calling efficiency and reducing costs.
-
+Data subscription service targets to improve the API calling efficiency of applications with active data push, which supports subscription to various data types such as real-time asset data, asset alert data, and asset metadata. [Learn more >>](https://www.envisioniot.com/docs/data-asset/en/latest/data_subscription_overview.html)
 <!--
 
 **Data storage policy**
@@ -40,15 +41,11 @@ EnOS provides a variety of data storage options for you based on your data stora
 
 -->
 
-## Related Services
+## Related Offerings
 
-### Device Management Service
+### Device Management
 
 EnOS Device Management helps you quickly and securely connect physical devices to EnOS Cloud and start to transfer data, manage device lifecycle, and map the physical asset structure to the digital world. [Learn more >>](https://www.envisioniot.com/docs/device-connection/en/latest/device_management_overview.html)
-
-### Stream Analytics Service
-
-EnOS Stream Analytics enables you to define the asset calculation logic and perform data calculations based on the predefined calculation logic for your organization. For example, calculating a 5-minute average of the measurement points or a 10-minute average, and etc. [Learn more >>](https://www.envisioniot.com/docs/online-data/en/latest/streaming_overview.html)
 
 ### Application Development
 
