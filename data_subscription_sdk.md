@@ -3,7 +3,7 @@ After completing the data subscription configuration, you can use the data subsc
 
 ## Real-time Data Subscription
 
-### Subscription Client Class: EOSClient
+### Subscription Client Class: EosClient
 
 .. list-table::
    :widths: 20 40 30 10
@@ -12,12 +12,12 @@ After completing the data subscription configuration, you can use the data subsc
      - Description
      - Parameter
      - Response
-   * - EosClient(String host,int port,String accessKey,String secret)
+   * - EosClient(String host,int port,String accessKey,String accessSecret)
      - Initiate constructed function.
      - + host: Subscription service host
        + port
        + accesskey
-       + secret: Secret of the accesskey
+       + accessSecret: Secret of the accesskey
      - EosClient instance
    * - getDataService()
      - Get real-time data subscription service instance.
@@ -63,7 +63,7 @@ After completing the data subscription configuration, you can use the data subsc
 
 ```
 /* service */
-EosClient eosClient = new EosClient("sub-server-host", "sub-server-port", "accessKey", "accessSecret");
+EosClient eosClient = new EosClient(host, port, accessKey, accessSecret);
 IDataService dataService = eosClient.getDataService();
 
 /* handler */
@@ -81,10 +81,11 @@ dataService.subscribe(dataHandler, subId);
 dataService.subscribe(dataHandler, subId, consumerGroup);
 ```
 
+.. note:: The `host` and `port` of the subscription server vary with the cloud region and instance. For private cloud instances, contact your Envision project manager or support representative to get the host and port information.
 
 ## Alert Data Subscription
 
-### Subscription Client Class: EOSClient
+### Subscription Client Class: EosClient
 
 .. list-table::
    :widths: 20 40 30 10
@@ -93,12 +94,12 @@ dataService.subscribe(dataHandler, subId, consumerGroup);
      - Description
      - Parameter
      - Response
-   * - EosClient(String host,int port,String accessKey,String secret)
+   * - EosClient(String host,int port,String accessKey,String accessSecret)
      - Initiate constructed function.
      - + host: Subscription service host
        + port
        + accesskey
-       + secret: Secret of the accesskey
+       + accessSecret: Secret of the accesskey
      - EosClient instance
    * - getAlertService()
      - Get alert data subscription service instance.
@@ -146,7 +147,7 @@ dataService.subscribe(dataHandler, subId, consumerGroup);
 
 ```
 /* service */
-EosClient eosClient = new EosClient("sub-server-host", "sub-server-port", "accessKey", "accessSecret");
+EosClient eosClient = new EosClient(host, port, accessKey, accessSecret);
 IAlertService alertService = eosClient.getAlertService();
 
 /* handler */
