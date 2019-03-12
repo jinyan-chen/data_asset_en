@@ -62,7 +62,7 @@ To help you understand data storage policy related concepts and customize data s
 
 ### Storage group
 
-Data storage group supports separate storage policy configuration of different projects or domains.
+Data storage policy group supports separate storage policy configuration of different projects or domains.
 
 ### Storage type
 

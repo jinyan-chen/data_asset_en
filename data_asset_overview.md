@@ -33,13 +33,12 @@ The essence of stream analytics service is to ensure low-latency of stream data 
 **Data subscription**
 
 Data subscription service targets to improve the API calling efficiency of applications with active data push, which supports subscription to various data types such as real-time asset data, asset alert data, and asset metadata. [Learn more >>](https://www.envisioniot.com/docs/data-asset/en/latest/data_subscription_overview.html)
-<!--
 
 **Data storage policy**
 
-EnOS provides a variety of data storage options for you based on your data storage and reading requirements. Data is stored by categories (data type and storage time), thus reducing data storage costs and enhancing data reading efficiency.
+EnOS provides a variety of data storage options for you based on your data storage and reading requirements. Data is stored by categories (data type and storage time), thus reducing data storage costs and enhancing data reading efficiency. [Learn more >>](https://www.envisioniot.com/docs/data-asset/en/latest/storage_policy_overview.html)
 
--->
+
 
 ## Related Offerings
 
