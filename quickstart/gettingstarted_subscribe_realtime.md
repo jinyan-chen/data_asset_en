@@ -2,7 +2,6 @@
 This guide introduces how to configure real-time data subscription on EnOS Console and consume data with the Java SDK provided by EnOS.
 
 ## Prerequisites
-- An account to log in EnOS Console.
 - Access permission to the Data Subscription module.
 - Device connection is completed, and the devices are uploading data to EnOS.
 - A workstation with IDE (IDEA or Eclipse) installed.
@@ -24,8 +23,8 @@ The goal of this guide is to get the maximum value of the *test_raw* input poi
 .. note:: - In this example, *test_raw* is the input point, and *test_5min* is the output point to receive the output data of stream processing.
         - Ensure that both the input point and the output point are of AI type.
 
-- **Storage configuration**: Configuring the input point *test_raw* as AI raw data and the output point *test_5min* as minute-level normalized AI data. For more information, see [Storage Strategy Configuration](https://www.envisioniot.com/docs/data-asset/en/latest/storage_strategy_overview.html).  
-- **Data ingestion**: For information about data ingestion of input point *test_raw*, see [Device Connection](https://www.envisioniot.com/docs/device-connection/en/latest/gettingstarted_device_connection.html).
+- **Storage configuration**: Configuring the input point *test_raw* as AI raw data and the output point *test_5min* as minute-level normalized AI data. For more information, see [Storage Strategy Configuration](../learn/storage_policy_overview.html).  
+- **Data ingestion**: For information about data ingestion of input point *test_raw*, see [Device Connection](https://www.envisioniot.com/docs/device-connection/en/latest/quickstart/gettingstarted_device_connection.html).
 
 ## Procedure
 The steps for subscribing and consuming real-time data are as follows:
@@ -83,7 +82,7 @@ dataService.subscribe(dataHandler, subId, consumerGroup);
 ```
 .. note:: In this sample, the `sub_server_host` and `sub_server_port` are the host and port of the subscription server, which vary with the cloud region and instance. For private cloud instances, contact your Envision project manager or support representative to get the host and port information.
 
-For more information about the SDK, see [Data Subscription SDK Reference](data_subscription_sdk).
+For more information about the SDK, see [Data Subscription SDK Reference](../reference/data_subscription_sdk).
 
 ## Step 4. Check the data consumption results
 

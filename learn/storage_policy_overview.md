@@ -14,11 +14,12 @@ With the Storage Policy service, EnOS provides a variety of data storage options
 
 ## Advantages
 
-- Separate storage by data types
+- Separate storage policy groups for different projects or domains
+- Multiple storage types for different data types
 - Flexible data storage time (1 month to 20 years)
-- Open APIs for reading stored data
+- Data service APIs for reading stored data
 
 ## Usage Limit
-- Currently, each organization can have 2 storage groups.
+- Currently, each organization can have 2 storage policy groups.
 - When storage policy is defined for a measure point, the point type and data type of the measure point cannot be changed. Otherwise, the stored data of the measure point cannot be retrieved by Open APIs.
-- The *getAssetsRawDataByTimeRange* API cannot be used to retrieve normalized data.
+- The *getAssetsRawDataByTimeRange* API cannot be used to retrieve data of the AI Normalized Data storage type.

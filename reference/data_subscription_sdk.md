@@ -16,8 +16,8 @@ After completing the data subscription configuration, you can use the data subsc
      - Initiate constructed function.
      - + host: Subscription service host
        + port
-       + accesskey
-       + accessSecret: Secret of the accesskey
+       + accessKey
+       + accessSecret: Secret of the accessKey
      - EosClient instance
    * - getDataService()
      - Get real-time data subscription service instance.
@@ -41,8 +41,8 @@ After completing the data subscription configuration, you can use the data subsc
    * - subscribe(IDataHandler dataHandler,String subId,String consumerGroup)
      - Get subscribed real-time data of subID and define the consumer group. The  "consumerGroup" parameter specifies the consumer group of the current client. The clients in a same group process subscribed data together, which improves the capability of data processing. Note that a message can be consumed by only 1 client in a consumer group.
      - + dataHandler: Real-time data processing object
-       + subId：Subscription ID
-       + consumerGroup：Consumer group (If null is specified, the system uses "DefaultConsumerGroup" by default. If you specify a value manually, avoid using "DefaultConsumerGroup" as the value of "consumerGroup").
+       + subId: Subscription ID
+       + consumerGroup: Consumer group (If null is specified, the system uses "DefaultConsumerGroup" by default. If you specify a value manually, avoid using "DefaultConsumerGroup" as the value of "consumerGroup").
      - null
 
 ### Real-time Data Handling Class: IDataHandler
@@ -98,8 +98,8 @@ dataService.subscribe(dataHandler, subId, consumerGroup);
      - Initiate constructed function.
      - + host: Subscription service host
        + port
-       + accesskey
-       + accessSecret: Secret of the accesskey
+       + accessKey
+       + accessSecret: Secret of the accessKey
      - EosClient instance
    * - getAlertService()
      - Get alert data subscription service instance.
@@ -118,14 +118,14 @@ dataService.subscribe(dataHandler, subId, consumerGroup);
      - Response
    * - subscribe(IAlertHandler alertHandler,String subId)
      - Get subscribed alert data of subID (this subscription client belongs to the default consumer group).
-     - + alertHandler：Data processing object
+     - + alertHandler: Data processing object
        + subId: Subscription ID
      - null
    * - subscribe(IAlertHandler alertHandler,String subId,String consumerGroup)
      - Get subscribed real-time data of subID and define the consumer group. The  "consumerGroup" parameter specifies the consumer group of the current client. The clients in a same group process subscribed data together, which improves the capability of data processing. Note that a message can be consumed by only 1 client in a consumer group.
-     - + alertHandler：Alert data processing object
-       + subId：Subscription ID
-       + consumerGroup：Consumer group (If null is specified, the system uses "DefaultConsumerGroup" by default. If you specify a value manually, avoid using "DefaultConsumerGroup" as the value of "consumerGroup").
+     - + alertHandler: Alert data processing object
+       + subId: Subscription ID
+       + consumerGroup: Consumer group (If null is specified, the system uses "DefaultConsumerGroup" by default. If you specify a value manually, avoid using "DefaultConsumerGroup" as the value of "consumerGroup").
      - null
 
 
@@ -140,7 +140,7 @@ dataService.subscribe(dataHandler, subId, consumerGroup);
      - Response
    * - alertRead(Alert alert)
      - Read the subscribed alert data.
-     - alert：Subscribed alert data
+     - alert: Subscribed alert data
      - null
 
 ### Code Sample

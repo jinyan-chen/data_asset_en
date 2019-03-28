@@ -2,7 +2,6 @@
 This guide introduces how to configure alert data subscription on EnOS Console and consume alert data with the Java SDK provided by EnOS.
 
 ## Prerequisites
-- An account to log in EnOS Console.
 - Access permission to the Data Subscription module.
 - Device connection is completed, and the devices are uploading data to EnOS.
 - A workstation with IDE (IDEA or Eclipse) installed.
@@ -17,11 +16,11 @@ The goal of this guide is to configure subscription to the alert data of measure
 - **Model configuration**: Detailed information about the (*testModel*) for this guide is as follows：
 
 | Feature Type  | Name     | Identifier | Point Type | Data Type |
-| ------------- | -------- | ---------- | ---------- | --------- |
+|:--------------|:---------|:-----------|:-----------|:----------|
 | Measure Point | test_raw | test_raw   | AI         | DOUBLE    |
 
-- **Data ingestion**: *test_raw* is the measure point for alert data ingestion. For information about data ingestion of input point *test_raw*, see [Device Connection](https://www.envisioniot.com/docs/device-connection/en/latest/gettingstarted_device_connection.html).
-- **Alert Configuration**: For information about asset alert configuration, see [Alert Management](https://www.envisioniot.com/docs/event-management/en/latest/alert_overview.html).
+- **Data ingestion**: *test_raw* is the measure point for alert data ingestion. For information about data ingestion of input point *test_raw*, see [Device Connection](https://www.envisioniot.com/docs/device-connection/en/latest/quickstart/gettingstarted_device_connection.html).
+- **Alert Configuration**: For information about asset alert configuration, see [Alert Management](https://www.envisioniot.com/docs/device-connection/en/latest/howto/alert/alert_overview.html).
 
 ## Procedure
 The steps for subscribing and consuming alert data are as follows:
@@ -81,7 +80,7 @@ alertService.subscribe(alertHandler, subId, consumerGroup);
 ```
 .. note:: In this sample, the `sub_server_host` and `sub_server_port` are the host and port of the subscription server, which vary with the cloud region and instance. For private cloud instances, contact your Envision project manager or support representative to get the host and port information.
 
-For more information about the SDK, see [Data Subscription SDK Reference](data_subscription_sdk).
+For more information about the SDK, see [Data Subscription SDK Reference](../reference/data_subscription_sdk).
 
 ## Step 4. Check the data consumption results
 

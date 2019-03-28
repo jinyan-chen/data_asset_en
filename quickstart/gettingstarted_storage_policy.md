@@ -5,7 +5,6 @@ This guide introduces how to quickly configure data storage with the Storage Pol
 
 ## Prerequisites
 
-- An account to log in EnOS Console.
 - Access permission to the Storage Policy module.
 - Device connection is completed, and the devices are uploading data to EnOS.
 
@@ -25,24 +24,24 @@ Feature Type|Name|Identifier|Point Type |Data Type
 ---|---|---|---|---
 Measure Point	 | test_raw | test_raw|AI |DOUBLE
 
-For instructions on creating and configuring models, see [Creating a Model](https://www.envisioniot.com/docs/device-connection/en/latest/model/creating_model).
+For instructions on creating and configuring models, see [Creating a Model](https://www.envisioniot.com/docs/device-connection/en/latest/howto/model/creating_model.html).
 
 ## Procedure
 
 The steps for configuring data storage policies and retrieving stored data are as follows:
 - Create a storage group
-- Configure and release a storage policy
+- Configure and save a storage policy
 - Retrieving and aggregate data with Open API
 
-## Step 1. Create a storage group
-Log in EnOS Console and select the **Storage Policy** module. Click **New Group** to create a storage group. Enter the group name, select a group model (select *testModel* for this guide), and click **OK** to save the storage group configuration.
+## Step 1. Create a storage policy group
+Log in EnOS Console and select the **Storage Policy** module. Click **New Group** to create a storage policy group. Enter the group name, select a group model (select *testModel* for this guide), and click **OK** to save the storage group configuration.
 
 ## Step 2. Configure storage policy
 After the storage group is created, you can see all the TSDB storage policy options listed under the storage group tab. Select the **AI Normalized Data** policy for this guide. On the **Edit Storage Policy** page, complete the following configuration:
 - **Storage Time**: Select the data storage time (for example, 1 month). 
 - **Select Points**: Select models and corresponding measure points. Data of the selected measure point will be stored according the storage policy configuration. Select the *test_raw* point of the *testModel* model for this guide.
 
-Click **OK** to save the storage policy configuration. The system will store the measure point data according to the configuration.
+Click **OK** to save the storage policy configuration. The system will store the data of the *test_raw* measure point according to the configuration. For this guide, the second-level suffix of the data timestamp will be removed when the AI data is stored in TSDB. Therefore, only the last-coming data record of a minute will be stored.
 
 ## Step 3. Retrieve stored data with API
 

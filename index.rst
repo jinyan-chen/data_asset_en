@@ -6,36 +6,45 @@
    :caption: Overview
 
    data_asset_overview
+   data_asset_concepts
 
 .. toctree::
    :maxdepth: 2
    :caption: Learn
 
-   data_asset_concepts
-   data_subscription_overview
-   storage_policy_overview
+   learn/data_flow
+   learn/storage_policy_overview
+   learn/index
+   learn/data_subscription_overview
 
 .. toctree::
    :maxdepth: 2
    :caption: Get Started
 
-   gettingstarted_subscribe_realtime
-   gettingstarted_subscribe_alerts
-   gettingstarted_storage_policy
+   quickstart/gettingstarted_storage_policy
+   quickstart/gettingstarted_ai
+   quickstart/gettingstarted_multi_point
+   quickstart/gettingstarted_subscribe_realtime
+   quickstart/gettingstarted_subscribe_alerts
 
 .. toctree::
    :maxdepth: 2
    :caption: How-to's
 
-   managing_data_subscription
+   howto/creating_storage_group
    configuring_tsdb_storage
-   managing_storage_groups
+   howto/editing_storage_group
+   howto/developing_stream
+   howto/monitoring_stream
+   howto/getting_stored_data
+   howto/managing_data_subscription
 
 .. toctree::
    :maxdepth: 1
    :caption: Reference
 
-   data_subscription_sdk
+   reference/statement_syntax
+   reference/data_subscription_sdk
 
 Downloads
 """"""""
