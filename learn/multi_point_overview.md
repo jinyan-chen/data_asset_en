@@ -3,10 +3,11 @@ In IoT business scenarios, the data of a measure point might be calculated from 
 
 ## Features
 1. Supporting calculation among multiple measure points of the same device.
-2. Strong syntax for calculation expressions.
-3. Data processing triggered by the data arrival of a measure point or by fixed frequency.
-4. Supporting timing interpolation strategy (if the data of a measure point does not arrive when calculation starts, the latest data of the measure point will be used for calculation).
-5. Supporting associated calculation with master data 
+2. Data processing triggered by the data arrival of a measure point or by fixed frequency.
+3. Supporting timing interpolation strategy (if the data of a measure point does not arrive when calculation starts, the latest data of the measure point will be used for calculation).
+4. Supporting associated calculation with master data 
+5. Strong syntax for calculation expressions
+6. Automatic hint of all the models, measure points, and attributes of the organization when compiling calculation expressions.
 
 <!--
 
