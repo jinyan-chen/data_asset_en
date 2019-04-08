@@ -1,5 +1,5 @@
-# Processing Multi Point Data
-This guide intends to help you learn how to process multi point data with the Multi Point Merge template.
+# Processing Multi-Point Data
+This guide intends to help you learn how to process data of multiple measure points with the Multi-Point Aggregation template.
 ## Prerequisites
 
 - Authorization to the Stream Data Processing module
@@ -7,13 +7,13 @@ This guide intends to help you learn how to process multi point data with the Mu
 
 ## Procedure
 
-The procedure of processing data with the Multi Point Merge template is as follows:
+The procedure of processing data with the Multi-Point Aggregation template is as follows:
 
-1. Design and create multi data processing stream
-2. Save and release the stream
-3. Preview the stream with real-time data
-4. Start the stream
-5. Monitor the running status and results of the stream
+1. Design and create multiple point data processing job
+2. Save and release the data processing job
+3. Preview the data processing job with real-time data
+4. Start the data processing job
+5. Monitor the running status and results of the data processing job
 
 ## Goal and Data Preparation
 
@@ -34,10 +34,10 @@ Measure Point	 | testC|testC|AI |DOUBLE
 - Storage configuration: Configuring data storage policy for the 3 points (as either AI raw data or AI normalized data). For more information, see [Configuring TSDB Storage](https://www.envisioniot.com/docs/data-asset/en/latest/configuring_tsdb_storage.html).
 - Data ingestion: For information about data ingestion of input points *testA_raw* and *testB_raw*, see [Device Connection](https://www.envisioniot.com/docs/device-connection/en/latest/quickstart/gettingstarted_device_connection.html).
 
-## Step 1. Develop Multi Point Data Processing Stream
-1. Log in EnOS Console and click **Stream Data Processing** > **Stream Development** to view all the streams created within the organization. You can double-click a stream to view and edit its configuration.
+## Step 1. Develop Multi-Point Data Processing Job
+1. Log in EnOS Console and click **Stream Data Processing** > **Stream Development** to view all the data processing jobs created within the organization. You can double-click a job to view and edit its configuration.
 
-2. Click the **+** icon above the stream list to create a stream. Enter the name and description of the stream and select *Multi Point Merge* as the template. Optionally, you can choose to import the configuration file of an existing stream to complete the configuration quickly.
+2. Click the **+** icon above the job list to create a job. Enter the name and description of the job and select *Multi-Point Merge* as the template. Optionally, you can choose to import the configuration file of an existing job to complete the configuration quickly.
 
 3. **Triggering Mode**: Select "point" as the triggering mode, and select "LastValue" as the timing interpolation strategy.
 
@@ -55,26 +55,26 @@ Measure Point	 | testC|testC|AI |DOUBLE
 
 
 
-## Step 2. Save and Release the Stream
+## Step 2. Save and Release the Job
 
-When the stream configuration is completed, you can save and release the multi point data processing stream online. See the following sample configuration:
+When the job configuration is completed, you can save and release the multi point data processing job online. See the following sample configuration:
 
 .. image:: ../media/multi_point_strategy.png
 
 
 
-## Step 3. Start the Stream
+## Step 3. Start the Job
 
-On the **Stream Operation** page, find the released stream in the table, and click the **Start** icon |start_icon| for the stream in the **Operations** column to start running the stream.
+On the **Stream Operation** page, find the released job in the table, and click the **Start** icon |start_icon| for the job in the **Operations** column to start running the data processing job.
 
 
 
-## Step 4. View the Running Results of the Stream
+## Step 4. View the Running Results of the Job
 
-On the **Stream Operation** page, find the running stream in the table, and click the stream name to open the **Stream Details** page. You can view the following information about the stream:
+On the **Stream Operation** page, find the running job in the table, and click the job name to open the **Stream Details** page. You can view the following information about the data processing job:
 
-- **Summary**: View the summary of the running stream, such as the overall data processing records and the data aggregation records in a specific period.
-- **Log**: Click the **View Logs** icon on the upper right corner to check the running log of the stream.
+- **Summary**: View the summary of the running job, such as the overall data processing records and the data aggregation records in a specific period.
+- **Log**: Click the **View Logs** icon on the upper right corner to check the running log of the job.
 - **Results**: Call the `getAssetsRawDataByTimeRange` API to get the data of point *testC*. For more information, see [Calling EnOS REST APIs](https://www.envisioniot.com/docs/app-development/en/latest/call_enos_api.html).
 
 .. |start_icon| image:: ../media/start_icon.png

@@ -12,15 +12,15 @@ EnOS Data Asset Management offering targets to help you optimize your total cost
 
 EnOS provides a variety of data storage options for you based on your data storage and reading requirements. Data is stored by categories (data type and storage time), thus reducing data storage costs and enhancing data reading efficiency. 
 
-Data storage policy must be configured before the devices start uploading data to EnOS Cloud. Otherwise, the uploaded device data will not be stored in EnOS TSDB by default. For more information, see [Storage Policy](learn/storage_policy_overview).
+Data storage policy must be configured before the devices start uploading data to EnOS Cloud. Otherwise, the uploaded device data will not be stored in EnOS TSDB by default. For more information, see overview of [Storage Policy](learn/storage_policy_overview).
 
 ## Stream Analytics
 
-The essence of stream analytics is to ensure low-latency of stream data transmission and processing, as well as high accuracy of data analytics. To achieve these goals, EnOS Stream Analytics not only provides high throughput, low latency stream processing, but also accumulated the leading and most frequently used stream processing algorithms for certain industries. The service provides visualized template-based configuration to help you quickly perform your stream analytics tasks and task monitoring. For more information, see [Stream Analytics](https://www.envisioniot.com/docs/data-asset/en/latest/learn/index.html).
+The essence of stream analytics is to ensure low-latency of stream data transmission and processing, as well as high accuracy of data analytics. To achieve these goals, EnOS Stream Analytics not only provides high throughput, low latency stream processing, but also accumulated the leading and most frequently used stream processing algorithms for certain industries. The service provides visualized template-based configuration to help you quickly perform your stream analytics tasks and task monitoring. For more information, see overview of [Stream Analytics](https://www.envisioniot.com/docs/data-asset/en/latest/learn/index.html).
 
 ## Data Subscription
 
-Data subscription service targets to improve the API calling efficiency of applications with active data push, which supports subscription to various data types such as real-time asset data and asset alert data. Java SDK is provided for retrieving the subscribed data. For more information, see [Data Subscription](learn/data_subscription_overview).
+Data subscription service targets to improve the API calling efficiency of applications with active data push, which supports subscription to various data types such as real-time asset data and asset alert data. Java SDK is provided for retrieving the subscribed data. For more information, see overview of [Data Subscription](learn/data_subscription_overview).
 
 ## Data Service APIs
 

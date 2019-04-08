@@ -19,8 +19,8 @@ The goal of this guide is to configure subscription to the alert data of measure
 |:--------------|:---------|:-----------|:-----------|:----------|
 | Measure Point | test_raw | test_raw   | AI         | DOUBLE    |
 
-- **Data ingestion**: *test_raw* is the measure point for alert data ingestion. For information about data ingestion of input point *test_raw*, see [Device Connection](https://www.envisioniot.com/docs/device-connection/en/latest/quickstart/gettingstarted_device_connection.html).
-- **Alert Configuration**: For information about asset alert configuration, see [Alert Management](https://www.envisioniot.com/docs/device-connection/en/latest/howto/alert/alert_overview.html).
+- **Data ingestion**: *test_raw* is the measure point for alert data ingestion. For information about data ingestion, see [Device Connection](https://www.envisioniot.com/docs/device-connection/en/latest/quickstart/gettingstarted_device_connection.html).
+- **Alert Configuration**: For information about alert configuration for devices, see [Alert Management](https://www.envisioniot.com/docs/device-connection/en/latest/howto/alert/alert_overview.html).
 
 ## Procedure
 The steps for subscribing and consuming alert data are as follows:
@@ -57,9 +57,11 @@ EnOS provides Java SDK to help developers with offline application development a
 
 ```
 String sub_server_host ="sub_server_host";
-String sub_server_port ="sub_server_port";
+int sub_server_port ="sub_server_port";
 String accessKey ="accessKey";
 String accessSecret ="accessSecret";
+String subId = "subscriptionId";
+
 /* service */
 EOSClient eosClient = new EOSClient(sub_server_host, sub_server_port, accessKey, accessSecret);
 IAlertService alertService = eosClient.getAlertService();
