@@ -1,6 +1,33 @@
 # Data Subscription SDK Reference
 After completing the data subscription configuration, you can use the data subscription SDK to retrieve the subscribed data. The data subscription SDK reference is as follows:
 
+## Dependency
+
+Before using the EnOS SDK for data subscription, add the following dependency to your Java project file:
+
+```
+// Dependency for EnOS SDK
+<dependency>
+    <groupId>com.envisioniot</groupId>
+    <artifactId>enos-subscribe</artifactId>
+    <version>2.0.0</version>
+</dependency>
+  
+// Dependency for gson and log4j
+<dependency>
+  <groupId>com.google.code.gson</groupId>
+  <artifactId>gson</artifactId>
+  <version>2.8.0</version>
+</dependency>
+<dependency>
+  <groupId>log4j</groupId>
+  <artifactId>log4j</artifactId>
+  <version>1.2.16</version>
+</dependency>
+```
+
+
+
 ## Real-time Data Subscription
 
 ### Subscription Client Class: EosClient
@@ -62,23 +89,42 @@ After completing the data subscription configuration, you can use the data subsc
 ### Code Sample
 
 ```
-/* service */
-EosClient eosClient = new EosClient(host, port, accessKey, accessSecret);
-IDataService dataService = eosClient.getDataService();
+import com.envisioniot.sub.client.EosClient;
+import com.envisioniot.sub.client.data.IDataHandler;
+import com.envisioniot.sub.client.data.IDataService;
+import com.envisioniot.sub.common.exception.SubscribeException;
+import com.envisioniot.sub.common.model.dto.StreamMessage;
 
-/* handler */
-IDataHandler dataHandler = new IDataHandler(){
-    @Override
-    public void dataRead(StreamMessage message) {
-        System.out.println(message);
+public class sample {
+
+    public static void main(String[] args) throws SubscribeException {
+        String host = "Host of subscription server";
+        int port = 9001;
+        String accessKey = "access_key";
+        String accessSecret = "secret_key";
+        String subId = "subscription_id";
+        String consumerGroup = "consumer_group"; 
+
+        /* Service */
+        EosClient eosClient = new EosClient(host, port, accessKey, accessSecret);
+        IDataService dataService = eosClient.getDataService();
+
+        /* Handler */
+        IDataHandler dataHandler = new IDataHandler(){
+
+            public void dataRead(StreamMessage message) {
+                System.out.println(message);
+            }
+        };
+
+        /* Subscribe */
+        dataService.subscribe(dataHandler, subId);
+        
+        /* Subscribe with consumer group (optional) */
+        dataService.subscribe(dataHandler, subId, consumerGroup);
+
     }
-};
-
-/* subscribe */
-dataService.subscribe(dataHandler, subId);
-
-/* subscribe with consumer group */
-dataService.subscribe(dataHandler, subId, consumerGroup);
+}
 ```
 
 .. note:: The `host` and `port` of the subscription server vary with the cloud region and instance. For private cloud instances, contact your Envision project manager or support representative to get the host and port information.
@@ -146,23 +192,42 @@ dataService.subscribe(dataHandler, subId, consumerGroup);
 ### Code Sample
 
 ```
-/* service */
-EosClient eosClient = new EosClient(host, port, accessKey, accessSecret);
-IAlertService alertService = eosClient.getAlertService();
+import com.envisioniot.sub.client.EosClient;
+import com.envisioniot.sub.client.data.IDataHandler;
+import com.envisioniot.sub.client.data.IDataService;
+import com.envisioniot.sub.common.exception.SubscribeException;
+import com.envisioniot.sub.common.model.dto.StreamMessage;
 
-/* handler */
-IAlertHandler alertHandler = new IAlertHandler (){
-    @Override
-    public void alertRead(Event alert) {
-        System.out.println(alert);
+public class sample {
+
+    public static void main(String[] args) throws SubscribeException {
+        String host = "Host of subscription server";
+        int port = 9001;
+        String accessKey = "access_key";
+        String accessSecret = "secret_key";
+        String subId = "subscription_id";
+        String consumerGroup = "consumer_group"; 
+
+        /* Service */
+        EosClient eosClient = new EosClient(host, port, accessKey, accessSecret);
+        IAlertService alertService = eosClient.getAlertService();
+
+        /* Handler */
+        IAlertHandler alertHandler = new IAlertHandler (){
+            @Override
+            public void alertRead(Alert alert) {
+                System.out.println(alert);
+            }
+        };
+
+        /* Subscribe */
+        alertService.subscribe(alertHandler, subId);
+        
+        /* Subscribe with consumer group (optional) */
+        alertService.subscribe(alertHandler, subId, consumerGroup);
+
     }
-};
-
-/* subscribe */
-alertService.subscribe(alertHandler, subId);
-
-/* subscribe with consumer group */
-alertService.subscribe(alertHandler, subId, consumerGroup);
+}
 ```
 
 <!--end-->
