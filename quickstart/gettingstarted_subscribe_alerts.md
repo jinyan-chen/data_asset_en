@@ -19,7 +19,7 @@ The goal of this guide is to configure subscription to the alert data of measure
 |:--------------|:---------|:-----------|:-----------|:----------|
 | Measure Point | test_raw | test_raw   | AI         | DOUBLE    |
 
-- **Data ingestion**: *test_raw* is the measure point for alert data ingestion. For information about data ingestion, see [Device Connection](https://www.envisioniot.com/docs/device-connection/en/latest/quickstart/gettingstarted_device_connection.html).
+- **Data ingestion**: Alert settings are configured for monitoring the data of the *test_raw* measure point. For information about data ingestion, see [Device Connection](https://www.envisioniot.com/docs/device-connection/en/latest/quickstart/gettingstarted_device_connection.html).
 - **Alert Configuration**: For information about alert configuration for devices, see [Alert Management](https://www.envisioniot.com/docs/device-connection/en/latest/howto/alert/alert_overview.html).
 
 ## Procedure
