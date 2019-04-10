@@ -6,14 +6,11 @@ After completing the data subscription configuration, you can use the data subsc
 Before using the EnOS SDK for data subscription, add the following dependency to your Java project file:
 
 ```
-// Dependency for EnOS SDK
 <dependency>
-    <groupId>com.envisioniot</groupId>
-    <artifactId>enos-subscribe</artifactId>
-    <version>2.0.0</version>
+  <groupId>com.envisioniot</groupId>
+  <artifactId>enos-subscribe</artifactId>
+  <version>2.0.0</version>
 </dependency>
-  
-// Dependency for gson and log4j
 <dependency>
   <groupId>com.google.code.gson</groupId>
   <artifactId>gson</artifactId>
@@ -98,15 +95,15 @@ import com.envisioniot.sub.common.model.dto.StreamMessage;
 public class sample {
 
     public static void main(String[] args) throws SubscribeException {
-        String host = "Host of subscription server";
+        String host = "subscription_server";
         int port = 9001;
         String accessKey = "access_key";
-        String accessSecret = "secret_key";
+        String secretKey = "secret_key";
         String subId = "subscription_id";
         String consumerGroup = "consumer_group"; 
 
         /* Service */
-        EosClient eosClient = new EosClient(host, port, accessKey, accessSecret);
+        EosClient eosClient = new EosClient(host, port, accessKey, secretKey);
         IDataService dataService = eosClient.getDataService();
 
         /* Handler */
@@ -201,15 +198,15 @@ import com.envisioniot.sub.common.model.dto.StreamMessage;
 public class sample {
 
     public static void main(String[] args) throws SubscribeException {
-        String host = "Host of subscription server";
+        String host = "subscription_server";
         int port = 9001;
         String accessKey = "access_key";
-        String accessSecret = "secret_key";
+        String secretKey = "secret_key";
         String subId = "subscription_id";
         String consumerGroup = "consumer_group"; 
 
         /* Service */
-        EosClient eosClient = new EosClient(host, port, accessKey, accessSecret);
+        EosClient eosClient = new EosClient(host, port, accessKey, secretKey);
         IAlertService alertService = eosClient.getAlertService();
 
         /* Handler */
