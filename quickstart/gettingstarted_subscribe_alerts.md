@@ -61,6 +61,7 @@ int sub_server_port ="sub_server_port";
 String accessKey ="accessKey";
 String accessSecret ="accessSecret";
 String subId = "subscriptionId";
+String consumerGroup = "consumerGroup";
 
 /* service */
 EOSClient eosClient = new EOSClient(sub_server_host, sub_server_port, accessKey, accessSecret);
@@ -69,15 +70,15 @@ IAlertService alertService = eosClient.getAlertService();
 /* handler */
 IAlertHandler alertHandler = new IAlertHandler(){
     @Override
-    public void eventRead(Event event) {
-        System.out.println(event);
+    public void eventRead(Alert alert) {
+        System.out.println(alert);
     }
 };
 
 /* subscribe */
 alertService.subscribe(alertHandler, subId);
 
-/* subscribe with consumer group */
+/* subscribe with consumer group (optional) */
 alertService.subscribe(alertHandler, subId, consumerGroup);
 ```
 .. note:: In this sample, the `sub_server_host` and `sub_server_port` are the host and port of the subscription server, which vary with the cloud region and instance. For private cloud instances, contact your Envision project manager or support representative to get the host and port information.
